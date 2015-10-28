@@ -1,17 +1,60 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 	<script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components\jquery\dist\jquery.js"></script>
-	<title>SoccerEyes</title>
+	<script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<link href="index.css" rel="stylesheet">
+	
+	<title>What's for dinner?</title>
 </head>
 
-<body ng-controller="mainController">
-	<h1>Hi</h1>
-	<pre>{{ message }}</pre>
-	<pre>{{ data }}</pre>
-	<script src="index.js"></script>
+<!-- Navbar -->
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a ui-sref="home" class="navbar-brand">What's for Dinner?</a>
+				</div>
+
+<!-- Navbar Header -->
+				
+			</div>
+		</div>
+	</nav><!--End navbar-->
+
+<div ui-view></div>
+
+
+<div class="footer">
+	<div class="container text-center">
+        <div class="row">
+            <div class="col-md-4 contact-details">
+                <h5>Code released under the <a href="http://www.devpointlabs.com/"><br>DevPointLab License.</a></h5></br>
+            </div>
+            <div class="col-md-4 contact-details">
+            	<h3>Made by <strong>Andre Matos.</strong></h3>
+            	<a href="https://www.linkedin.com/pub/andré-matos/7b/360/233"><img class="linked" src="jpg/linked_in_icon.png"></a>
+            	<a href="mailto:andrematosbr@yahoo.com"><span class="glyphicon glyphicon-envelope"></span></a>
+            </div>
+            <div class="col-md-4 contact-details">
+               	<h5>Base on <a href="https://www.edamam.com/">Edamam Api.</a></h5>
+            </div>
+        </div>
+    </div>
+  	<div class="row copyright">
+	    <div class="col-lg-12">
+	      <p class="small">© 2015 Andre Matos</p>
+	    </div>
+  	</div>
+</div>
+
+<script src="index.js"></script>
+<script src="bootstrap.js"></script>
+<script src="dropdown.js"></script>
+
 </body>
 </html>

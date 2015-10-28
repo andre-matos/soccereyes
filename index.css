@@ -1,0 +1,106 @@
+body { 
+	padding-top: 50px; 
+}
+
+.caption {
+	position: relative;
+	height: 90px;
+}
+
+.caption > .caption-label {
+	color: #ff7f00;
+}
+
+.result-options {
+	float: right;
+}
+
+.ingredient-container {
+	position: relative;
+}
+
+.ingredient-filter {
+	position: relative;
+	display: none;	
+}
+
+.ingredient-container:hover > a > .ingredient-filter {
+	display: block;
+	padding: 40px;
+	cursor: pointer;
+	position: absolute;
+    width: 252px;
+    height: 252px;
+    background: rgba(0,0,0,.5);
+}
+
+.ingredient-label {
+	position: absolute;
+	left: 0;
+    font-size: 55px;
+    font-weight: 600;
+    color: #ff7f00;
+}
+
+.jumbotron {
+	background-color: white;
+	color: #ff7f00;
+}
+
+.footer {
+	background-color: white;
+	color: #ff7f00;
+	text-align: center;
+}
+
+.linked {
+	height: 41px;
+	width: 41px;
+}
+
+.glyphicon {
+	font-size: 30px;
+	color: #005C88;
+	top: 11px;
+}
+
+.navbar-default .navbar-brand  {
+    color: #ff7f00;
+}
+
+body > footer > div.container.text-center > div > div:nth-child(1) > h5 {
+    margin-top: 45px;
+    margin-bottom: 10px;
+}
+
+body > footer > div.container.text-center > div > div:nth-child(3) > h5 {
+    margin-top: 45px;
+    margin-bottom: 10px;
+}
+
+.thumbnail {
+    border-color: #ff7f00;
+}
+
+.form-control {
+    color: #FF7F00;
+    background-color: #fff;
+    border: 1px solid #FF7F00;
+    border-radius: 4px;
+}
+
+body > div.ng-scope > div > div > div:nth-child(1) > h5 > a > img {
+	width: 100px;
+    height: 100px;
+    margin-top: 45px;
+    margin-left: 125px;
+}
+
+body > div.ng-scope > div > div > div:nth-child(1) > h4 {
+	margin-top: 40px;
+}
+
+body > div.ng-scope > div > div > div:nth-child(2) > img {
+	margin-top: 25px;
+	float: center;
+}

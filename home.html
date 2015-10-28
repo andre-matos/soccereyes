@@ -1,0 +1,92 @@
+<!-- Title with search bar -->
+	
+	<div class="jumbotron">
+		<div class="container">
+			<h1 class="text-center">What's for Dinner?</h1>
+
+<!-- include a search bar -->
+			
+			<div class="input-group input-group-lg">
+				<input type="text" ng-model="query" class="form-control" ng-keyup="fetchRecipes(query)"/> 
+				<span class="input-group-btn">
+					<button class="btn btn-warning" type="button" ng-click="fetchRecipes(query)">Food</button>
+				</span>
+			</div><!-- End Search Bar -->
+		</div>
+	</div><!-- End Jumbotron -->
+
+<!-- 4 initials Buttons -->
+	
+	<div class="container">
+		<div class="row" ng-hide="resultsShown">
+			<div class="col-xs-6 col-md-3 ingredient-container">
+				<a ng-click="fetchRecipes('beef')" class="thumbnail">
+					<div class="ingredient-filter">
+						<p class="ingredient-label">BEEF</p>
+					</div>
+					<img src="jpg/carne assada.jpg" alt="Beef">
+				</a>
+			</div>
+			<div class="col-xs-6 col-md-3 ingredient-container">
+				<a ng-click="fetchRecipes('chicken')" class="thumbnail">
+					<div class="ingredient-filter">
+						<p class="ingredient-label">CHICKEN</p>
+					</div>
+					<img src="jpg/frango assado.jpg" alt="Chicken">
+				</a>
+			</div>
+			<div class="col-xs-6 col-md-3 ingredient-container">
+				<a ng-click="fetchRecipes('fish')" class="thumbnail">
+					<div class="ingredient-filter">
+						<p class="ingredient-label">FISH</p>
+					</div>
+					<img src="jpg/peixe assado.jpg" alt="Fish"
+				>
+				</a>
+			</div>
+			<div class="col-xs-6 col-md-3 ingredient-container">
+				<a ng-click="fetchRecipes('vegetables')" class="thumbnail">
+					<div class="ingredient-filter">
+						<p class="ingredient-label">VEGGIES</p>
+					</div>
+					<img src="jpg/vegetal.jpg" alt="Vegetable">
+				</a>
+			</div>
+		</div><!-- End 4 Buttons -->
+
+<!-- Order by Results and Buttons -->		
+		
+		<div class="row" ng-show="resultsShown">
+			<div class="col-xs-12">
+				<h2>Results shown for "{{searchedQuery}}" 
+					<small class="result-options">Sort by 
+						<div class="btn-group" role="group" aria-label="...">
+						  <button type="button" class="btn btn-warning" ng-click="setOrder('recipe.servingCalories')">Calories</button>
+						  <button type="button" class="btn btn-warning" ng-click="setOrder('recipe.yield')">Servings</button>
+						  <button type="button" class="btn btn-warning" ng-click="setOrder('recipe.label')">Name</button>
+						</div>
+					</small>
+				</h2>
+			</div>
+		</div><!-- End Order by Results and Buttons -->
+
+<!-- Search Results -->
+		
+		<div class="row">
+			<div ng-repeat="recipe in recipes | orderBy: order" class="inline text-center">
+				<div class="col-xs-6 col-md-3">
+					<div class="thumbnail">
+						<a ui-sref="recipe({id: recipe.recipe.id})"><img src="{{ recipe.recipe.image }}" alt="{{recipe.recipe.label}}"></a>
+						<div class="caption">
+							<h5>{{ recipe.recipe.label | limitTo:30 }}</h5>
+							<label class="caption-label">Calories</label>
+							<span class="caption-value">{{recipe.recipe.servingCalories | number:0}}</span>
+							<br>
+							<label class="caption-label">Servings</label>
+							<span class="caption-value">{{recipe.recipe.yield}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
