@@ -1,7 +1,7 @@
 
 <div class="container text-center">
          <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 recipe-section">
               <h4>See full recipe on</h4>
                 <h5><a href="{{ recipe.url }}"><img src="{{ recipe.sourceIcon }}" alt="Ops!!!" class="thumbnail"></a></h5>
                 <h5><a href="{{ recipe.url }}">{{recipe.source}}</a></h5>
@@ -11,14 +11,18 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
-              <img src="{{ recipe.image }}" alt="Ops!!!">
+            <div class="col-md-4 recipe-section">
               <h2>{{ recipe.label }}</h2>
-              
+              <img src="{{ recipe.image }}" alt="Ops!!!">
             </div>
 
-            <div class="col-md-4">
-                <!-- <pre>{{ recipe }}</pre> -->
+            <div class="col-md-4 recipe-section">
+              <h4>Ingredients:</h4>
+              <ul>
+                  <li ng-repeat="line in recipe.ingredientLines">
+                    <p>{{line}}</p>
+                  </li>
+              </ul>
             </div>
         </div>
     </div>
